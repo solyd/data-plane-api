@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+package envoy.api.v2.here_auth;
+option go_package = "here_auth";
+
+import "validate/validate.proto";
