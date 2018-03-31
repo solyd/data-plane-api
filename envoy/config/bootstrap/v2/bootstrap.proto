@@ -17,6 +17,8 @@ import "envoy/api/v2/lds.proto";
 import "envoy/config/trace/v2/trace.proto";
 import "envoy/config/metrics/v2/stats.proto";
 import "envoy/config/ratelimit/v2/rls.proto";
+import "envoy/config/here_auth/v2/rls.proto";
+
 
 import "google/protobuf/duration.proto";
 
@@ -119,6 +121,11 @@ message Bootstrap {
 
   // Configuration for the local administration HTTP server.
   Admin admin = 12 [(validate.rules).message.required = true, (gogoproto.nullable) = false];
+
+  // Configuration for an external here auth service provider. If not
+  // specified, any calls to the here auth service will immediately return
+  // success.
+  envoy.config.here_auth.v2.HereAuthServiceConfig here_auth_service = 1000;
 }
 
 // Administration interface :ref:`operations documentation
