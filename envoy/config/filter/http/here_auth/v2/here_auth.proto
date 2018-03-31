@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package envoy.config.filter.http.here_auth.v2;
+option go_package = "v2";
+
+import "google/protobuf/duration.proto";
+
+import "validate/validate.proto";
+import "gogoproto/gogo.proto";
+
+message HereAuth {
+  // The header from which to extract the token.
+  string header_name = 1 [(validate.rules).string.min_bytes = 1];
+
+  // The timeout in milliseconds for the here auth service RPC. If not
+  // set, this defaults to 20ms.
+  google.protobuf.Duration timeout = 2 [(gogoproto.stdduration) = true];
+}
