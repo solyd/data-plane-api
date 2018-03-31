@@ -15,6 +15,7 @@ api_proto_library(
         "//envoy/config/metrics/v2:metrics_service",
         "//envoy/config/metrics/v2:stats",
         "//envoy/config/ratelimit/v2:rls",
+        "//envoy/config/here_auth/v2:rls",
         "//envoy/config/trace/v2:trace",
     ],
 )
@@ -32,6 +33,7 @@ api_go_proto_library(
         "//envoy/config/metrics/v2:metrics_service_go_proto",
         "//envoy/config/metrics/v2:stats_go_proto",
         "//envoy/config/ratelimit/v2:rls_go_grpc",
+        "//envoy/config/here_auth/v2:rls_go_grpc",
         "//envoy/config/trace/v2:trace_go_proto",
     ],
 )
