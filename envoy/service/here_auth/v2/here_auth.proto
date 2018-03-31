@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package envoy.service.here_auth.v2;
+option go_package = "v2";
+
+import "envoy/api/v2/here_auth/here_auth.proto";
+
+import "validate/validate.proto";
+
+service HereAuthService {
+  // Determine whether token is valid or not.
+  rpc VerifyToken (VerifyTokenRequest) returns (VerifyTokenResponse) {}
+}
+
+message VerifyTokenRequest {
+  string token = 1;
+}
+
+message VerifyTokenResponse {
+  enum Code {
+    INVALID = 0;
+    EXPIRED = 1;
+    OK = 2;
+  }
+
+  Code code = 1;
+}
