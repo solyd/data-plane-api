@@ -532,6 +532,8 @@ message RouteAction {
 
   // Indicates that the route has a CORS policy.
   CorsPolicy cors = 17;
+
+  google.protobuf.BoolValue here_auth_enabled = 500;
 }
 
 message RedirectAction {
