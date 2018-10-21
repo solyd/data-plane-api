@@ -21,6 +21,7 @@ message VerifyTokenResponse {
     INVALID = 0;
     EXPIRED = 1;
     OK = 2;
+    OBSOLETE = 3;
   }
 
   Code code = 1;
